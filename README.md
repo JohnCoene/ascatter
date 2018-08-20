@@ -2,6 +2,8 @@
 
 Virtual Reality Scatter Plot with R.
 
+![logo](man/figures/logo.png)
+
 ## Installation
 
 ``` r
