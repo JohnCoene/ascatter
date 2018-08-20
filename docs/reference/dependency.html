@@ -30,9 +30,13 @@
 
 
 
+  <link href="../extra.css" rel="stylesheet">
+  
 <meta property="og:title" content="Attach dependency — as_dependency" />
 
 <meta property="og:description" content="Attach scatter plot dependency." />
+
+<meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -71,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ascatter</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.0.0.9000</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.0.1.9000</span>
       </span>
     </div>
 
@@ -134,7 +138,7 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw pkg'>aframer</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/aframer/topics/scene'>a_scene</a></span>(
+    <pre class="examples"><div class='input'><span class='kw pkg'>aframer</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/aframer/topics/a_scene'>a_scene</a></span>(
   <span class='kw pkg'>aframer</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/aframer/topics/primitives'>a_sky</a></span>(),
   <span class='fu'>list</span>(
     <span class='fu'>d3_dependency</span>(),
@@ -144,19 +148,19 @@
 #&gt;   &lt;a-sky&gt;&lt;/a-sky&gt;
 #&gt; &lt;/a-scene&gt;</div><div class='input'>
 <span class='co'># OR</span>
-<span class='kw pkg'>aframer</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/aframer/topics/scene'>a_scene</a></span>(
+<span class='kw pkg'>aframer</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/aframer/topics/a_scene'>a_scene</a></span>(
   <span class='kw pkg'>aframer</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/aframer/topics/primitives'>a_sky</a></span>(),
   <span class='fu'>as_full_dependency</span>()
 )</div><div class='output co'>#&gt; &lt;a-scene&gt;
 #&gt;   &lt;a-sky&gt;&lt;/a-sky&gt;
 #&gt;   d3
 #&gt;   4.4.1
-#&gt;   C:/Users/JCOE/Documents/Packages/ascatter/inst/d3
+#&gt;   /home/jp/Packages/ascatter/inst/d3
 #&gt;   d3.min.js
 #&gt;   TRUE
 #&gt;   ascatter
 #&gt;   0.0.1
-#&gt;   C:/Users/JCOE/Documents/Packages/ascatter/inst/ascatter
+#&gt;   /home/jp/Packages/ascatter/inst/ascatter
 #&gt;   a-scatterplot.min.js
 #&gt;   TRUE
 #&gt; &lt;/a-scene&gt;</div><div class='input'>

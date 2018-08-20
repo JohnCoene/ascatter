@@ -1,15 +1,15 @@
 Package: ascatter
 Title: Virtual Reality Scatter Plot
-Version: 0.0.0.9000
+Version: 0.0.1.9000
 Authors@R: person("John", "Coene", email = "jcoenep@gmail.com", role = c("aut", "cre"))
 Description: Virtual reality scatter plot in R.
 Depends: R (>= 3.4.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: http://ascatter.john-coene.com/
-BugReports: https://github.com/JohnCoene/ascatter/issues
 Suggests: htmltools
 Imports: R6, dplyr, rlang, jsonlite, glue, aframer
 RoxygenNote: 6.1.0
 Remotes: JohnCoene/aframer
+URL: http://ascatter.john-coene.com/
+BugReports: https://github.com/JohnCoene/ascatter/issues

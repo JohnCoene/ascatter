@@ -4,7 +4,19 @@
 library(htmltools)
 ```
 
-Virtual Reality Scatter Plot with R.
+```{r, echo=FALSE}
+div(
+  class = "row",
+  div(
+    class = "col-md-3",
+    img(src = "logo.png")
+  ),
+  div(
+    class = "col-md-9",
+    "Virtual Reality 3D Scatter Plot with R."
+  )
+)
+```
 
 #### Installation
 
@@ -40,6 +52,6 @@ tags$a(
   " Demo",
   href = "example.html",
   target = "_blank",
-  class = "btn btn-lg btn-primary"
+  class = "btn btn-lg btn-primary btn-blue"
 )
 ```
