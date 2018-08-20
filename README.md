@@ -19,7 +19,7 @@ aframer::browse_aframe(
   aScatter$
     new(title = "Random")$
     build(
-      data, lon, pop, lat, color, size, 
+      population, lon, pop, lat, color, size, 
       scale = "2 2 2", valfill="1, 9745.6", 
       yLimit = 0.2, rotation = "0 90 0"
     )$
