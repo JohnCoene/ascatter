@@ -43,7 +43,7 @@ aScatter <- R6::R6Class(
       private$data <- opts
       invisible(self)
     },
-    plot = function(){
+    plot = function(...){
 
       opts <- append(private$data, self$options)
 
@@ -62,6 +62,7 @@ aScatter <- R6::R6Class(
       htmltools::attachDependencies(
         aframer::a_scene(
           htmltools::HTML(tag),
+          ...,
           version = "0.5.0"
         ),
         list(
