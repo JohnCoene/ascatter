@@ -1,5 +1,30 @@
 #' ascatter R6 Class
 #'
+#' Create a VR 3D Scatter Plot.
+#'
+#' @section Methods:
+#' \itemize{
+#'   \item{\code{data} Add data.}
+#'   \item{\code{build} Build graph.}
+#'   \item{\code{get} Get graph.}
+#'   \item{\code{browse} Browse graph.}
+#'   \item{\code{embed} Embed graph.}
+#' }
+#'
+#' @examples
+#'
+#' data(population)
+#'
+#' aScatter$
+#'   new(title = "Random")$
+#'   data(
+#'     population, lon, pop, lat, color, size,
+#'     scale = "2 2 2", valfill="1, 9745.6",
+#'     yLimit = 0.2, rotation = "0 90 0"
+#'   )$
+#'   build()$
+#'   embed()
+#'
 #' @export
 aScatter <- R6::R6Class(
   "aScatter",
@@ -8,7 +33,7 @@ aScatter <- R6::R6Class(
     initialize = function(...){
       self$options <- list(...)
     },
-    build = function(data, x, y, z, size = NULL, color = NULL, ...){
+    data = function(data, x, y, z, size = NULL, color = NULL, ...){
 
       if(missing(data) || missing(x) || missing(y) || missing(z))
         stop("must pass data, x, y, z", call. = FALSE)
@@ -40,15 +65,15 @@ aScatter <- R6::R6Class(
       if(!rlang::quo_is_null(color))
         opts$val <- rlang::quo_name(color)
 
-      private$data <- opts
+      private$db <- opts
       invisible(self)
     },
-    plot = function(...){
+    build = function(...){
 
-      opts <- append(private$data, self$options)
+      opts <- append(private$db, self$options)
 
       opts <- glue::glue(
-        "{names(private$data)} = '{private$data}'"
+        "{names(private$db)} = '{private$db}'"
       )
 
       opts <- paste0(opts, collapse = " ")
@@ -59,7 +84,7 @@ aScatter <- R6::R6Class(
         "></a-scatterplot>"
       )
 
-      htmltools::attachDependencies(
+      tag <- htmltools::attachDependencies(
         aframer::a_scene(
           htmltools::HTML(tag),
           ...,
@@ -71,9 +96,31 @@ aScatter <- R6::R6Class(
         ),
         append = TRUE
       )
+
+      private$plot <- tag
+      invisible(self)
+    },
+    get = function(){
+      private$plot
+    },
+    browse = function(){
+      aframer::browse_aframe(private$plot)
+    },
+    embed = function(width = "100%", height = "400px"){
+      style <- glue::glue("width:{width};height:{height};")
+
+      a <- private$plot
+
+      a[[1]] <- htmltools::tagAppendAttributes(a[[1]], style = style, embedded = NA)
+      htmltools::div(
+        a
+      )
     }
   ),
   private = list(
-    data = NULL
+    width = "100%",
+    height = "400px",
+    plot = NULL,
+    db = NULL
   )
 )

@@ -9,6 +9,32 @@
 aScatter
 }
 \description{
-ascatter R6 Class
+Create a VR 3D Scatter Plot.
+}
+\section{Methods}{
+
+\itemize{
+  \item{\code{data} Add data.}
+  \item{\code{build} Build graph.}
+  \item{\code{get} Get graph.}
+  \item{\code{browse} Browse graph.}
+  \item{\code{embed} Embed graph.}
+}
+}
+
+\examples{
+
+data(population)
+
+aScatter$
+  new(title = "Random")$
+  data(
+    population, lon, pop, lat, color, size,
+   scale = "2 2 2", valfill="1, 9745.6",
+   yLimit = 0.2, rotation = "0 90 0"
+  )$
+  build()$
+  embed()
+
 }
 \keyword{datasets}
