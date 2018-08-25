@@ -87,8 +87,8 @@ aScatter <- R6::R6Class(
       tag <- htmltools::attachDependencies(
         aframer::a_scene(
           htmltools::HTML(tag),
-          ...,
-          version = "0.5.0"
+          aframer::a_dependency(),
+          ...
         ),
         list(
           d3_dependency(),

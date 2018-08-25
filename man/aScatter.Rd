@@ -30,8 +30,8 @@ aScatter$
   new(title = "Random")$
   data(
     population, lon, pop, lat, color, size,
-   scale = "2 2 2", valfill="1, 9745.6",
-   yLimit = 0.2, rotation = "0 90 0"
+    scale = "2 2 2", valfill="1, 9745.6",
+    yLimit = 0.2, rotation = "0 90 0"
   )$
   build()$
   embed()
