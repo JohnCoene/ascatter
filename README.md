@@ -17,17 +17,15 @@ library(ascatter)
 
 data(population)
 
-aframer::browse_aframe(
-  aScatter$
-    new(title = "Random")$
-    build(
-      population, lon, pop, lat, color, size, 
-      scale = "2 2 2", valfill="1, 9745.6", 
-      yLimit = 0.2, rotation = "0 90 0"
-    )$
-    plot()
-)
-
+aScatter$
+  new(title = "Random")$
+  data(
+    population, lon, pop, lat, color, size, 
+    scale = "2 2 2", valfill="1, 9745.6", 
+    yLimit = 0.2, rotation = "0 90 0"
+  )$
+  build()$
+  browse()
 ```
 
 ![output](example.png)

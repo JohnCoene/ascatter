@@ -107,14 +107,7 @@ aScatter <- R6::R6Class(
       aframer::browse_aframe(private$plot)
     },
     embed = function(width = "100%", height = "400px"){
-      style <- glue::glue("width:{width};height:{height};")
-
-      a <- private$plot
-
-      a[[1]] <- htmltools::tagAppendAttributes(a[[1]], style = style, embedded = NA)
-      htmltools::div(
-        a
-      )
+      aframer::embed_aframe(private$plot, width, height)
     }
   ),
   private = list(
